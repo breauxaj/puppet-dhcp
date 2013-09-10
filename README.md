@@ -1,4 +1,4 @@
-DHCP
+dhcp
 ====
 
 Basic management of dhcp server, and I do mean basic.
