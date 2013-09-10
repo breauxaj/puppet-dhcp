@@ -11,7 +11,7 @@ dhcp::config { 'default':
   netmask       => '255.255.255.0',
   router        => '192.168.1.1',
   domain        => 'example.com',
-  name_server   => '208.67.222.222,208.67.220.220',
+  name_servers  => [ '208.67.222.222', '208.67.220.220' ],
   range_start   => '192.168.1.32',
   range_end     => '192.168.1.47',
   lease_default => 21600,
