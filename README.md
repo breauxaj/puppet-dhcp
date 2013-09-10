@@ -4,8 +4,11 @@ DHCP
 Basic management of dhcp server, and I do mean basic.
 
 Samples
-=======
-
+-------
+```
+include dhcp
+```
+```
 dhcp::config { 'default':
   subnet        => '192.168.1.0',
   netmask       => '255.255.255.0',
@@ -17,5 +20,7 @@ dhcp::config { 'default':
   lease_default => 21600,
   lease_max     => 43200,
 }
-
+```
+```
 dhcp::service { 'default': ensure => running, enable => true }
+```
