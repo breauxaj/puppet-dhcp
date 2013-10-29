@@ -2,16 +2,16 @@
 ddns-update-style interim;
 ignore client-updates;
 
-subnet <%= @subnet %> netmask <%= @netmask %> {
+subnet <%= subnet %> netmask <%= netmask %> {
 authoritative;
 
-option routers              <%= @router %>;
-option subnet-mask          <%= @netmask %>;
+option routers              <%= router %>;
+option subnet-mask          <%= netmask %>;
 
-option domain-name          "<%= @domain %>";
-option domain-name-servers  <%= [@name_servers].join(",") %>;
+option domain-name          "<%= domain %>";
+option domain-name-servers  <%= name_servers.join(",") %>;
 
-range dynamic-bootp         <%= @range_start %> <%= @range_end %>;
-default-lease-time          <%= @lease_default %>;
-max-lease-time              <%= @lease_max %>;
+range dynamic-bootp         <%= range_start %> <%= range_end %>;
+default-lease-time          <%= lease_default %>;
+max-lease-time              <%= lease_max %>;
 }
