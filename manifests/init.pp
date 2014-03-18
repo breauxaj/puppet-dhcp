@@ -1,8 +1,10 @@
-class dhcp {
+class dhcp (
+  $ensure = 'latest'
+){
   $required = $::operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'dhcp',
   }
 
-  package { $required: ensure => latest }
+  package { $required: ensure => $ensure }
 
 }

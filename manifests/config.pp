@@ -13,12 +13,17 @@ define dhcp::config (
     /(?i-mx:centos|fedora|redhat|scientific)/ => '/etc/dhcpd.conf',
   }
 
+  $depends = $::operatingsystem ? {
+    /(?i-mx:centos|fedora|redhat|scientific)/ => 'dhcp',
+  }
+
   file { $config:
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
     content => template('dhcp/dhcpd.erb'),
+    require => Package[$depends],
   }
 
 }
