@@ -1,4 +1,30 @@
-class dhcp::service (
+# Define: dhcp::service
+#
+# This define manages the DHCP service
+#
+# Parameters:
+#
+#  ensure:
+#    Controls the state of the service
+#
+#  enable:
+#    Controls the service start on boot
+#
+# Actions:
+#   - Stops/starts the DHCP service
+#
+# Requires:
+#
+# Sample Usage:
+#
+#  To enable the service, use:
+#
+#    dhcp::service { 'default':
+#      ensure => running,
+#      enable => true
+#    }
+#
+define dhcp::service (
   $ensure = running,
   $enable = true
 ) {
